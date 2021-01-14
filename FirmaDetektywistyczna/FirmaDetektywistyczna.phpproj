@@ -16,7 +16,11 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="connect.php" />
+    <Compile Include="zalogowany.php" />
     <Compile Include="index.php" />
+    <Compile Include="logout.php" />
+    <Compile Include="login.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />

@@ -7,25 +7,16 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
 </head>
 <body>
+	<form action="login.php" method="post">
+	
+		Login: <br /> <input type="text" name="login" /> <br />
+		Hasło: <br /> <input type="password" name="haslo" /> <br /><br />
+		<input type="submit" value="Zaloguj się" />
+	
+	</form>
+
     <?php
-
-    $hostname="localhost";
-    $username="s151266";
-    $passowrd="JNw#7E8xVISJ";
-    $dbname="s151266";
-
-    $con = mysqli_connect($hostname,$username,$passowrd,$dbname);
-
-    // Check connection
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-        exit();
-    }
-    echo "POŁĄCZONO Z BAZĄ!";
-    mysqli_query($con,"SELECT * FROM Ludzie");
-
+	if(isset($_SESSION['blad']))	echo $_SESSION['blad'];
     ?>
-
-
 </body>
 </html>
