@@ -15,7 +15,7 @@ if (!isset($_SESSION['zalogowany']))
     <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Oliwski</title>
+    <title>Zalogowany</title>
 </head>
 
 <body>

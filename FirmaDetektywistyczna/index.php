@@ -13,18 +13,20 @@
 </head>
 <body>
 	<div class="user-container">
+
 		<form action="login.php" method="post">
-	
 			Login: <input type="text" name="login" />
 			Hasło: <input type="password" name="haslo" /> 
 			<input type="submit" value="Zaloguj się" />
-	
-		</form>
+        </form>
+        <button onclick="window.location.href='rejestracja.php'">Zarejestruj się</button>
+
 	</div>
 
-    <div class="top">
-        <div class="name">Herkules!</div>
-    </div>
+    <div class="
+                top">
+                <div class="name">Herkules!</div>
+</div>
 
     <div class="navbar">
         <button

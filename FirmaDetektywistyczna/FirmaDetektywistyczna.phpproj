@@ -17,6 +17,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="connect.php" />
+    <Compile Include="logowanie.php" />
+    <Compile Include="rejestracja.php" />
     <Compile Include="zalogowany.php" />
     <Compile Include="index.php" />
     <Compile Include="logout.php" />
