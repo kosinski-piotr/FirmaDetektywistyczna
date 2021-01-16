@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
     <style type="text/css">
-        .nav-dark .nav {
+       .nav {
             width:50%;
         }
     </style>
@@ -15,31 +15,27 @@
     <div class="user-container"></div>
 
     <div class="top">
-        <div class="name">Herkules!</div>
+        <div class="name">>Herkules! </div>
     </div>
 
     <div class="navbar">
         <button
             class="nav"
-            onclick="window.location.href='index.php'">
-            Strona główna
+            onclick="window.location.href='modyfikuj.php'">
+            Modyfikuj dane
         </button>
         <button
-            class="nav-dark"
-            onclick="window.location.href='logowanie.php'">
-            Zaloguj się
+            class="nav"
+            onclick="window.location.href='wykupione.php'">
+            Przeglądaj wykupione usługi
         </button>
     </div>
 
     <div class="text">
-        <form action="login.php" method="post">
-            Login:
-            <input type="text" name="login" />
-            Hasło:
-            <input type="password" name="haslo" />
-            <input type="submit" value="Zaloguj się" />
-
-        </form>
+        <button
+            onclick="window.location.href='index.php'">
+            Strona główna
+        </button>
     </div>
     <?php
 	if(isset($_SESSION['blad']))	echo $_SESSION['blad'];

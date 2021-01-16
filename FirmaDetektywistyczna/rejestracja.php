@@ -2,28 +2,30 @@
 
 	session_start();
 
-	if (isset($_POST['email']))
+	if (isset($_POST['imie']) && isset($_POST['nazwisko']))
 	{
 		//Udana walidacja? Załóżmy, że tak!
 		$wszystko_OK=true;
 
-		//Sprawdź poprawność nickname'a
-		$nick = $_POST['nick'];
+		//Sprawdź poprawność loginu
+		$login = $_POST['login'];
 
-		//Sprawdzenie długości nicka
-		if ((strlen($nick)<3) || (strlen($nick)>20))
+		//Sprawdzenie długości loginu
+		if ((strlen($login)<3) || (strlen($login)>20))
 		{
 			$wszystko_OK=false;
-			$_SESSION['e_nick']="Nick musi posiadać od 3 do 20 znaków!";
+			$_SESSION['e_login']="Login musi posiadać od 3 do 20 znaków!";
 		}
 
-		if (ctype_alnum($nick)==false)
+		if (ctype_alnum($login)==false)
 		{
 			$wszystko_OK=false;
-			$_SESSION['e_nick']="Nick może składać się tylko z liter i cyfr (bez polskich znaków)";
+			$_SESSION['e_login']="Login może składać się tylko z liter i cyfr (bez polskich znaków)";
 		}
 
-		$email = $_POST['email'];
+		$imie = $_POST['imie'];
+		$nazwisko = $_POST['nazwisko'];
+
 		//Sprawdź poprawność hasła
 		$haslo1 = $_POST['haslo1'];
 		$haslo2 = $_POST['haslo2'];
@@ -41,8 +43,9 @@
 		}
 
 		//Zapamiętaj wprowadzone dane
-		$_SESSION['fr_nick'] = $nick;
-		$_SESSION['fr_email'] = $email;
+		$_SESSION['fr_login'] = $login;
+		$_SESSION['fr_imie'] = $imie;
+		$_SESSION['fr_nazwisko'] = $nazwisko;
 		$_SESSION['fr_haslo1'] = $haslo1;
 		$_SESSION['fr_haslo2'] = $haslo2;
 
@@ -60,25 +63,25 @@
 			{
 
 				//Czy nick jest już zarezerwowany?
-				$rezultat = $polaczenie->query("SELECT id FROM uzytkownicy WHERE user='$nick'");
+				$rezultat = $polaczenie->query("SELECT id FROM uzytkownicy WHERE user='$login'");
 
 				if (!$rezultat) throw new Exception($polaczenie->error);
 
-				$ile_takich_nickow = $rezultat->num_rows;
-				if($ile_takich_nickow>0)
+				$ile_takich_loginow = $rezultat->num_rows;
+				if($ile_takich_loginow>0)
 				{
 					$wszystko_OK=false;
-					$_SESSION['e_nick']="Istnieje już gracz o takim nicku! Wybierz inny.";
+					$_SESSION['e_login']="Istnieje już użytkownik o takim loginie. Wybierz inny :)";
 				}
 
 				if ($wszystko_OK==true)
 				{
-					//Hurra, wszystkie testy zaliczone, dodajemy gracza do bazy
-					echo '<script>alert('.$email.')</script>';
-					if ($polaczenie->query("INSERT INTO uzytkownicy VALUES (79, '$nick', '$haslo1', '$email', '$email', 1)"))
+					//Dodawanie Użytkownika do bazy:
+					if ($polaczenie->query("INSERT INTO uzytkownicy VALUES (NULL, '$login', '$haslo1', '$imie', '$nazwisko', 1)"))
 					{
 						$_SESSION['udanarejestracja']=true;
-						header('Location: index.php');
+                        echo("<script>alert('Rejestracja przebiegła pomyślnie!')</script>");
+                        echo("<script>window.location = 'index.php';</script>");
 					}
 					else
 					{
@@ -136,46 +139,50 @@
 
     <div class="text">
         <form method="post">
-            Nickname:
+        Login:
             <br />
             <input type="text" value="<?php
-                                      if (isset($_SESSION['fr_nick']))
+                                      if (isset($_SESSION['fr_login']))
                                       {
-                                          echo $_SESSION['fr_nick'];
-                                          unset($_SESSION['fr_nick']);
+                                          echo $_SESSION['fr_login'];
+                                          unset($_SESSION['fr_login']);
                                       }
                                       ?>"
-                name="nick" />
+                name="login" />
             <br />
 
             <?php
-			if (isset($_SESSION['e_nick']))
+			if (isset($_SESSION['e_login']))
 			{
-				echo '<div class="error">'.$_SESSION['e_nick'].'</div>';
-				unset($_SESSION['e_nick']);
+				echo '<div class="error">'.$_SESSION['e_login'].'</div>';
+				unset($_SESSION['e_login']);
 			}
             ?>
-
-		E-mail:
+            <hr />
+		Imię:
             <br />
             <input type="text" value="<?php
-                                      if (isset($_SESSION['fr_email']))
+                                      if (isset($_SESSION['fr_imie']))
                                       {
-                                          echo $_SESSION['fr_email'];
-                                          unset($_SESSION['fr_email']);
+                                          echo $_SESSION['fr_imie'];
+                                          unset($_SESSION['fr_imie']);
                                       }
                                       ?>"
-                name="email" />
+                name="imie" />
             <br />
-
-            <?php
-			if (isset($_SESSION['e_email']))
-			{
-				echo '<div class="error">'.$_SESSION['e_email'].'</div>';
-				unset($_SESSION['e_email']);
-			}
-            ?>
-
+            <hr />
+        Nazwisko:
+            <br />
+            <input type="text" value="<?php
+                                      if (isset($_SESSION['fr_nazwisko']))
+                                      {
+                                          echo $_SESSION['fr_nazwisko'];
+                                          unset($_SESSION['fr_nazwisko']);
+                                      }
+                                      ?>"
+                name="nazwisko" />
+            <br />
+            <hr />
 		Twoje hasło:
             <br />
             <input type="password" value="<?php
@@ -188,16 +195,11 @@
                 name="haslo1" />
             <br />
 
-            <?php
-			if (isset($_SESSION['e_haslo']))
-			{
-				echo '<div class="error">'.$_SESSION['e_haslo'].'</div>';
-				unset($_SESSION['e_haslo']);
-			}
-            ?>
 
+            <hr />
 		Powtórz hasło:
             <br />
+			
             <input type="password" value="<?php
                                           if (isset($_SESSION['fr_haslo2']))
                                           {
@@ -207,10 +209,17 @@
                                           ?>"
                 name="haslo2" />
             <br />
-
+            <?php
+			if (isset($_SESSION['e_haslo']))
+			{
+				echo '<div class="error">'.$_SESSION['e_haslo'].'</div>';
+				unset($_SESSION['e_haslo']);
+			}
+            ?>
      
+  
+            <hr />
             <br />
-
             <input type="submit" value="Zarejestruj się" />
 
         </form>
