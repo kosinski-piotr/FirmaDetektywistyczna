@@ -23,6 +23,7 @@
 			$_SESSION['e_nick']="Nick może składać się tylko z liter i cyfr (bez polskich znaków)";
 		}
 
+		$email = $_POST['email'];
 		//Sprawdź poprawność hasła
 		$haslo1 = $_POST['haslo1'];
 		$haslo2 = $_POST['haslo2'];
@@ -44,7 +45,6 @@
 		$_SESSION['fr_email'] = $email;
 		$_SESSION['fr_haslo1'] = $haslo1;
 		$_SESSION['fr_haslo2'] = $haslo2;
-		if (isset($_POST['regulamin'])) $_SESSION['fr_regulamin'] = true;
 
 		require_once "connect.php";
 		mysqli_report(MYSQLI_REPORT_STRICT);
