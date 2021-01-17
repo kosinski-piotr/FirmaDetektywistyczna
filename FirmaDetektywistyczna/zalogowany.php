@@ -44,7 +44,7 @@ if (!isset($_SESSION['zalogowany']))
     <div class="navbar">
         <button
             class="nav-dark"
-            onclick="window.location.href='stronaGlowna.html'">
+            onclick="window.location.href='zalogowany.php'">
             Strona główna
         </button>
 

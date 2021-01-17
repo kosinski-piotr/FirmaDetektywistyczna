@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+if (!isset($_SESSION['zalogowany']))
+{
+    header('Location: index.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +21,10 @@
     </style>
 </head>
 <body>
-    <div class="user-container"></div>
-
+    <div class="user-container">
+    </div>
     <div class="top">
-        <div class="name">>Herkules! </div>
+        <div class="name">Herkules! </div>
     </div>
 
     <div class="navbar">
@@ -33,7 +42,7 @@
 
     <div class="text">
         <button
-            onclick="window.location.href='index.php'">
+            onclick="window.location.href='zalogowany.php'">
             Strona główna
         </button>
     </div>

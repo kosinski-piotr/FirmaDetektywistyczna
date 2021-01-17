@@ -36,6 +36,7 @@
 
 				$wiersz = $rezultat->fetch_assoc();
 				$_SESSION['id'] = $wiersz['id'];
+				$_SESSION['pass'] = $wiersz['pass'];
 				$_SESSION['user'] = $wiersz['user'];
 				$_SESSION['Imie'] = $wiersz['Imie'];
 				$_SESSION['Nazwisko'] = $wiersz['Nazwisko'];
