@@ -52,7 +52,7 @@ if (!isset($_SESSION['zalogowany']))
             Kontakt
         </button>
 
-        <button class="nav" onclick="window.location.href='stronaGlowna.html'">
+        <button class="nav" onclick="window.location.href='uslugi.php'">
             Przeglądaj Usługi
         </button>
     </div>

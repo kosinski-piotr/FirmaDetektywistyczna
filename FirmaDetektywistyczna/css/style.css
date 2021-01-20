@@ -88,3 +88,47 @@
     font-size: 28px;
 }
 
+#tabela, #tabela1, #tabela2, #tabela3, #tabela4 {
+    border: 2px solid black;
+    text-align: center;
+    height: 500px;
+}
+
+#dane {
+    border: 2px solid black;
+}
+
+.col-sm-3 p {
+    border-top: 2px solid black;
+}
+
+.col-sm-3 {
+    margin: 1px;
+}
+
+#backB, #acceptB {
+    width: 150px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    height: 0;
+    line-height: 0;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 100;
+    padding: 20px;
+    background-color: #396708;
+    border: solid #000000 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+
+#acceptB {
+    background-color: #396708;
+}
+
+#backB {
+    background-color: #df3a3a;
+}
