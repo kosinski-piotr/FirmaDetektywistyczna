@@ -67,7 +67,7 @@ if (!isset($_SESSION['zalogowany']))
                     Wykrywanie podsłuchów oraz nadajników GPS.
                     <br />
                     <br />
-                    <a href="url">Przejdź!</a>
+                    <a href="wykrywanie.php">Przejdź!</a>
                     <br />
                     <br />
                 </h3>

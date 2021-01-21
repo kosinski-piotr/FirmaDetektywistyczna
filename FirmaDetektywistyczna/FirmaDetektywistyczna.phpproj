@@ -21,6 +21,7 @@
     <Compile Include="profile.php" />
     <Compile Include="rejestracja.php" />
     <Compile Include="uslugi.php" />
+    <Compile Include="wykrywanie.php" />
     <Compile Include="zalogowany.php" />
     <Compile Include="index.php" />
     <Compile Include="logout.php" />
@@ -32,5 +33,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\style.css" />
+    <Content Include="css\wykrywanie.css" />
   </ItemGroup>
 </Project>
