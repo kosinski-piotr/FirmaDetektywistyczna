@@ -17,7 +17,7 @@ if (!isset($_SESSION['zalogowany']))
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <title>Zalogowany</title>
+    <title>Usługi</title>
 </head>
 
 <body>
@@ -50,7 +50,7 @@ if (!isset($_SESSION['zalogowany']))
             Strona główna
         </button>
 
-        <button class="nav" onclick="window.location.href='stronaGlowna.html'">
+        <button class="nav" onclick="window.location.href='kontakt.php'">
             Kontakt
         </button>
 
@@ -81,7 +81,7 @@ if (!isset($_SESSION['zalogowany']))
                     Sprawdzanie komputerów pod kątem oprogramowania szpiegującego.
                     <br />
                     <br />
-                    <a href="url">Przejdź!</a>
+                    <a href="komputery.php">Przejdź!</a>
                     <br />
                     <br />
                 </h3>
@@ -95,7 +95,7 @@ if (!isset($_SESSION['zalogowany']))
                     Obserwacja ogólna
                     <br />
                     <br />
-                    <a href="ObserwacjaOgolna.html">Przejdź!</a>
+                    <a href="obserwacjaOgolna.php">Przejdź!</a>
                     <br />
                     <br />
                 </h3>
@@ -109,7 +109,7 @@ if (!isset($_SESSION['zalogowany']))
                     Ustalenie miejsca pracy.
                     <br />
                     <br />
-                    <a href="url">Przejdź!</a>
+                    <a href="miejscePracy.php">Przejdź!</a>
                     <br />
                     <br />
                 </h3>
@@ -123,7 +123,7 @@ if (!isset($_SESSION['zalogowany']))
                     Sprawdzanie wiernosci wspołmałżonka, partnera.
                     <br />
                     <br />
-                    <a href="url">Przejdź!</a>
+                    <a href="wiernosc.php">Przejdź!</a>
                     <br />
                     <br />
                 </h3>

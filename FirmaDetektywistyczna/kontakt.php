@@ -1,25 +1,23 @@
 <?php
 
 session_start();
+
 if (!isset($_SESSION['zalogowany']))
 {
     header('Location: index.php');
     exit();
 }
+
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="pl">
 <head>
-    <meta charset="UTF-8" />
-    <title>Profil użytkownika</title>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="css/style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
-    <style type="text/css">
-       .nav {
-            width:50%;
-        }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Strona główna</title>
 </head>
+
 <body>
     <div class="user-container">
         <a class="user-link" href="profile.php">
@@ -28,6 +26,7 @@ if (!isset($_SESSION['zalogowany']))
             ?>
         </a>
     </div>
+
     <div class="top">
         <div class="name">Herkules!</div>
 
@@ -45,24 +44,24 @@ if (!isset($_SESSION['zalogowany']))
     <div class="navbar">
         <button
             class="nav"
-            onclick="window.location.href='modyfikuj.php'">
-            Modyfikuj dane
+            onclick="window.location.href='zalogowany.php'">
+            Strona główna
         </button>
-        <button
-            class="nav"
-            onclick="window.location.href='wykupione.php'">
-            Przeglądaj wykupione usługi
+
+        <button class="nav-dark" onclick="window.location.href='kontakt.php'">
+            Kontakt
+        </button>
+
+        <button class="nav" onclick="window.location.href='uslugi.php'">
+            Przeglądaj Usługi
         </button>
     </div>
 
     <div class="text">
-        <button
-            onclick="window.location.href='zalogowany.php'">
-            Strona główna
-        </button>
+        <b>Możesz się z nami skontaktować poprzez</b>
+        <br /> -nr telefon: 123 456 789
+        <br /> -adres e-mail: herkules@detektywi.pl
+        <br /> -wiadomość prywatną na stronie
     </div>
-    <?php
-	if(isset($_SESSION['blad']))	echo $_SESSION['blad'];
-    ?>
 </body>
 </html>

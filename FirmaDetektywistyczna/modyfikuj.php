@@ -108,7 +108,7 @@ if (isset($_POST['login']))
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Firma detektywistyczna Herkules</title>
+    <title>Modyfikuj dane</title>
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
     <style type="text/css">
@@ -117,12 +117,28 @@ if (isset($_POST['login']))
         }
     </style>
 </head>
+
 <body>
     <div class="user-container">
+        <a class="user-link" href="profile.php">
+            <?php
+            echo "<p>Zalogowany jako ".$_SESSION['Imie'].' '.$_SESSION['Nazwisko'];
+            ?>
+        </a>
     </div>
 
     <div class="top">
         <div class="name">Herkules!</div>
+
+        <div class="space"></div>
+
+        <div class="envelope-container">
+            <img src="images/Envelope-icon.png" alt="koperta" class="envelope" />
+        </div>
+
+        <form action="logout.php" method="get">
+            <input class="button " type="submit" value="Wyloguj się" />
+        </form>
     </div>
 
     <div class="navbar">
