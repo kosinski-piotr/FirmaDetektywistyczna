@@ -1,0 +1,127 @@
+body {
+  margin: 15px 30px 30px 30px;
+}
+
+.user-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.user-link {
+  display: block;
+  font-size: 20px;
+}
+
+.top {
+  display: flex;
+  height: 70px;
+  align-items: center;
+}
+
+.name {
+  font-size: 45px;
+  flex-grow: 1;
+}
+
+.space {
+  flex-grow: 4;
+}
+
+.envelope-container {
+  flex-grow: 1;
+}
+
+.envelope {
+  height: 60px;
+  padding-left: 60%;
+}
+
+.button {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  height: 0;
+  line-height: 0;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 100;
+  padding: 20px;
+  background-color: #df3a3a;
+  border: solid #000000 1px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+}
+
+.nav {
+  border: 2px solid black;
+  width: 33%;
+  text-align: center;
+  height: 40px;
+  vertical-align: middle;
+  line-height: 35px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nav-dark {
+  border: 2px solid black;
+  width: 33%;
+  text-align: center;
+  height: 40px;
+  vertical-align: middle;
+  line-height: 35px;
+  font-size: 24px;
+  background-color: #dadada;
+  cursor: pointer;
+}
+
+.text {
+  margin: 5% 15% 15% 15%;
+  font-size: 28px;
+}
+
+.title {
+  font-size: 25px;
+  margin: 30px 0px 0px 80px;
+}
+
+#dropDown {
+  margin: 40px auto 0 auto;
+  display: block;
+  width: 200px;
+}
+
+#wrapperOne {
+  margin: 40px auto 0 80px;
+}
+
+#wrapperTwo {
+  display: none;
+  margin: 40px auto 0 80px;
+}
+
+.button-green {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  height: 0;
+  line-height: 0;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 100;
+  padding: 20px;
+  background-color: #396708;
+  border: solid #000000 1px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}

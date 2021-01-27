@@ -5,27 +5,51 @@
     <title>Firma detektywistyczna Herkules</title>
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+    <style type="text/css">
+        .nav-dark {
+            width:100%
+        }
+    </style>
 </head>
 <body>
-    <?php
+	<div class="user-container">
 
-    $hostname="localhost";
-    $username="s151266";
-    $passowrd="JNw#7E8xVISJ";
-    $dbname="s151266";
+		<form action="login.php" method="post">
+			Login: <input type="text" name="login" />
+			Hasło: <input type="password" name="haslo" /> 
+			<input type="submit" value="Zaloguj się" />
+        </form>
+        <button onclick="window.location.href='rejestracja.php'">Zarejestruj się</button>
 
-    $con = mysqli_connect($hostname,$username,$passowrd,$dbname);
+	</div>
 
-    // Check connection
-    if (mysqli_connect_errno()) {
-        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-        exit();
-    }
-    echo "POŁĄCZONO Z BAZĄ!";
-    mysqli_query($con,"SELECT * FROM Ludzie");
+    <div class="
+                top">
+                <div class="name">Herkules!</div>
+</div>
 
-    ?>
+    <div class="navbar">
+        <button
+            class="nav-dark"
+            onclick="window.location.href='index.php'">
+            Strona główna
+        </button>
+    </div>
 
-
+    <div class="text">
+        <b>ZALOGUJ SIĘ ABY MIEĆ DOSTĘP DO WSZYSTKICH MOŻLIWOSCI!</b><br /><br />
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting, remaining essentially
+      unchanged. It was popularised in the 1960s with the release of Letraset
+      sheets containing Lorem Ipsum passages, and more recently with desktop
+      publishing software like Aldus PageMaker including versions of Lorem
+      Ipsum.
+    </div>
+        <?php
+	if(isset($_SESSION['blad']))	echo $_SESSION['blad'];
+        ?>
 </body>
 </html>

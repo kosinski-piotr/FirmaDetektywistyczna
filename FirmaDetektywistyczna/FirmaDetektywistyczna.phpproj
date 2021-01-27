@@ -16,12 +16,31 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="connect.php" />
+    <Compile Include="daneprzelewu.php" />
+    <Compile Include="komputery.php" />
+    <Compile Include="kontakt.php" />
+    <Compile Include="miejscePracy.php" />
+    <Compile Include="modyfikuj.php" />
+    <Compile Include="obserwacjaOgolna.php" />
+    <Compile Include="profile.php" />
+    <Compile Include="rejestracja.php" />
+    <Compile Include="uslugi.php" />
+    <Compile Include="wiernosc.php" />
+    <Compile Include="wykrywanie.php" />
+    <Compile Include="wykupione.php" />
+    <Compile Include="zalogowany.php" />
     <Compile Include="index.php" />
+    <Compile Include="logout.php" />
+    <Compile Include="login.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\index.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\wykrywanie.css" />
   </ItemGroup>
 </Project>
