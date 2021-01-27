@@ -35,7 +35,6 @@ if (isset($_POST['Ilosc']))
 
             if ($wszystko_OK==true)
             {
-                //Dodawanie Użytkownika do bazy:
                 if ($polaczenie->query("INSERT INTO zlecenie VALUES (NULL,NULL,'$cena','Ilość komputerów: $ilosc',2, {$_SESSION['id']})"))
                 {
                     $_SESSION['udanarejestracja']=true;

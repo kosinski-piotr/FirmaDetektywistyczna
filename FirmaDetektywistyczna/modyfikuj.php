@@ -76,7 +76,7 @@ if (isset($_POST['login']))
 
             if ($wszystko_OK==true)
             {
-                //Dodawanie Użytkownika do bazy:
+
                 if ($polaczenie->query("UPDATE uzytkownicy SET user = '$login', pass = '$haslo2' WHERE id = {$_SESSION['id']}"))
                 {
                     $_SESSION['udanarejestracja']=true;

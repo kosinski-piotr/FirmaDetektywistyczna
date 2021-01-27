@@ -44,7 +44,6 @@ if (isset($_POST['TerminSpotkania']) && isset($_POST['Godzina']) && isset($_POST
 
             if ($wszystko_OK==true)
             {
-                //Dodawanie Użytkownika do bazy:
                 if ($polaczenie->query("INSERT INTO zlecenie VALUES (NULL,'Data: $termin<br />Godzina: $godzina','$cena','Adres: $adres',1, {$_SESSION['id']})"))
                 {
                     $_SESSION['udanarejestracja']=true;
