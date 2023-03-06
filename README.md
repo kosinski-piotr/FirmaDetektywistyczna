@@ -1,2 +1,2 @@
 # FirmaDetektywistyczna
-Przykładowa strona dla firmy detektywistycznej stworzona w php na potrzeby studiów na przedmiot Inżynieria Oprogramowania
+Przykładowa strona dla firmy detektywistycznej stworzona z użyciem php na potrzeby studiów na przedmiot Inżynieria Oprogramowania
